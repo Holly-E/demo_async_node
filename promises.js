@@ -2,8 +2,11 @@
 // 1.
 var p = Promise.resolve('Hello Promise!');
 p.then(function(message) {
-  console.log(message);
-  return 'Hi';
+  console.log(message);  //logs 'Hello Promise!'
+  return 'Hi #2!'; //this return value is the input if there is another chain
+})
+.then(function(message) {
+  console.log(message); //logs 'Hi #2!'
 });
 
 
@@ -47,13 +50,3 @@ Promise.all(nums)
   .then(function(results) {
     console.log(results);
   });
-
-
-
-
-
-
-
-
-
-
